@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DebtWise : Debt Management Systen</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./image/logob.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/copy.css">
+    
+</head>
+
+<body class="dashboard">
+    
+    <div id="main-wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="header-content">
+                            <div class="header-left">
+                                <div class="brand-logo"><a class="mini-logo" href="dashboard.html"><img src="./image/logoi.png" alt="" width="40"></a></div>
+                                
+                            </div>
+                            <div class="header-right">
+                                <div class="dark-light-toggle" onclick="themeToggle()">
+                                   
+                                    <span class="dark"><i class="fi fi-rr-eclipse-alt"></i></span>
+                                    <span class="light"><i class="fi fi-rr-eclipse-alt"></i></span>
+                                </div>
+                                
+                                <div class="dropdown profile_log dropdown">
+                                    <div data-bs-toggle="dropdown">
+                                        <div class="user icon-menu active"><span><i class="fi fi-rr-user"></i></span></div>
+                                    </div>
+                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu dropdown-menu-end">
+                                        <div class="user-email">
+                                            <div class="user">
+                                                <span class="thumb"><i class="fi fi-rr-user"></i></span>
+                                                <div class="user-info">
+                                                    <h5>George Michael</h5>
+                                                    <span>george05@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="dropdown-item" href="/profile.html">
+                                            <span><i class="fi fi-rr-user"></i></span>
+                                            Profile
+                                        </a>
+                                        <!-- <a class="dropdown-item" href="/settings.html">
+                                            <span><i class="fi fi-rr-settings"></i></span>
+                                            Settings
+                                        </a> -->
+                                        <a class="dropdown-item logout" href="login.html">
+                                            <span><i class="fi-br-sign-out-alt"></i></span>
+                                            Logout
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="brand-logo"><a class="full-logo" href="dashboard.html"><img src="./image/logos.png" alt="" width="190"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <span>
+                                <i class="fi fi-rr-dashboard"></i>
+                            </span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="budgets.html">
+                            <span>
+                                <i class="fi fi-rr-donate"></i>
+                            </span>
+                            <span class="nav-text">Budgets</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="goals.html">
+                            <span>
+                                <i class="fi fi-sr-bullseye-arrow"></i>
+                            </span>
+                            <span class="nav-text">Goals</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="debt.html">
+                            <span>
+                                <i class="fi fi-sr-calculator"></i>
+                            </span>
+                            <span class="nav-text">Debt</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="education.html">
+                            <span>
+                                <i class="fi-br-graduation-cap"></i>
+                            </span>
+                            <span class="nav-text">Education</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <span>
+                                <i class="fi fi-rr-user"></i>
+                            </span>
+                            <span class="nav-text">Profile</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-xl-4">
+                                    <div class="page-title-content">
+                                        <h3>Dashboard</h3>
+                                        <p class="mb-2">Welcome to DebtWise : Debt Management System</p>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="breadcrumbs"><a href="#">Home </a>
+                                        <span><i class="fi fi-rr-angle-small-right"></i></span>
+                                        <a href="#">Dashboard</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                        <div class="stat-widget-1">
+                            <h6>Total Balance</h6>
+                            <h3>RM 432568</h3>
+                            <p>
+                                <span class="text-success"><i class="fi fi-rr-arrow-trend-up"></i>2.47%</span>
+                                Last month <strong>RM 24,478</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                        <div class="stat-widget-1">
+                            <h6>Total Period Change</h6>
+                            <h3>RM 245860</h3>
+                            <p>
+                                <span class="text-success"><i class="fi fi-rr-arrow-trend-up"></i>2.47%</span>
+                                Last month <strong>RM24,478</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                        <div class="stat-widget-1">
+                            <h6>Total Period Expenses</h6>
+                            <h3>RM 25.35</h3>
+                            <p>
+                                <span class="text-danger"><i class="fi fi-rr-arrow-trend-down"></i>2.47%</span>
+                                Last month <strong>RM24,478</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                        <div class="stat-widget-1">
+                            <h6>Total Period Income</h6>
+                            <h3>RM 22.56</h3>
+                            <p>
+                                <span class="text-success"><i class="fi fi-rr-arrow-trend-up"></i>2.47%</span>
+                                Last month <strong>RM44,478</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-xxl-8 col-xl-8 col-lg-6 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Monthly Income vs Expenses</h4>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="chartjsIncomeVsExpense"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-xxl-4 col-xl-4 col-lg-6 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Monthly Expenses Breakdown</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="progress-stacked">
+                                    <div class="progress" style="width: 38%">
+                                        <div class="progress-bar bg-orange-500"></div>
+                                    </div>
+                                    <div class="progress" style="width: 22%">
+                                        <div class="progress-bar bg-amber-500"></div>
+                                    </div>
+                                    <div class="progress" style="width: 12%">
+                                        <div class="progress-bar bg-yellow-500"></div>
+                                    </div>
+                                    <div class="progress" style="width: 9%">
+                                        <div class="progress-bar bg-lime-500"></div>
+                                    </div>
+                                    <div class="progress" style="width: 8%">
+                                        <div class="progress-bar bg-green-500"></div>
+                                    </div>
+                                    <div class="progress" style="width: 6%">
+                                        <div class="progress-bar bg-cyan-500"></div>
+                                    </div>
+                                    <div class="progress" style="width: 5%">
+                                        <div class="progress-bar bg-stone-500"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="list-1 mt-3">
+                                    <ul>
+                                        <li>
+                                            <p class="mb-0"><i class="fi fi-ss-circle text-orange-500"></i>Food</p>
+                                            <h5 class="mb-0"><span>RM1200</span>38%</h5>
+                                        </li>
+                                        <li>
+                                            <p class="mb-0"><i class="fi fi-ss-circle text-amber-500"></i>Transport</p>
+                                            <h5 class="mb-0"><span>RM1200</span>38%</h5>
+                                        </li>
+                                        <li>
+                                            <p class="mb-0"><i class="fi fi-ss-circle text-yellow-500"></i>Healthcare</p>
+                                            <h5 class="mb-0"><span>RM1200</span>38%</h5>
+                                        </li>
+                                        <li>
+                                            <p class="mb-0"><i class="fi fi-ss-circle text-lime-500"></i>Education</p>
+                                            <h5 class="mb-0"><span>RM1200</span>38%</h5>
+                                        </li>
+                                        <li>
+                                            <p class="mb-0"><i class="fi fi-ss-circle text-green-500"></i>Clothes</p>
+                                            <h5 class="mb-0"><span>RM1200</span>38%</h5>
+                                        </li>
+                                        <li>
+                                            <p class="mb-0"><i class="fi fi-ss-circle text-cyan-500"></i>Pets</p>
+                                            <h5 class="mb-0"><span>RM1200</span>38%</h5>
+                                        </li>
+                                        <li>
+                                            <p class="mb-0"><i class="fi fi-ss-circle text-stone-500"></i>Entertainment</p>
+                                            <h5 class="mb-0"><span>RM1200</span>38%</h5>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Monthly Budgets</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="budget-content">
+                                    <ul>
+                                        <li>
+                                            <div class="budget-info flex-grow-2 me-3">
+                                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                                    <h5 class="mb-1"><i class="bg-green-500 fi fi-rr-carrot"></i>Grocery
+                                                        Stores</h5>
+                                                    <p class="mb-0"><strong>75 </strong>/ 100</p>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-green-500" role="progressbar" style="width: 75%;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="budget-info flex-grow-2 me-3">
+                                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                                    <h5 class="mb-1"><i class="bg-cyan-500 fi fi-rr-bus"></i>Transportation
+                                                    </h5>
+                                                    <p class="mb-0"><strong>25 </strong>/ 100</p>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-cyan-500" role="progressbar" style="width: 25%;"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="budget-info flex-grow-2 me-3">
+                                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                                    <h5 class="mb-1"><i class="bg-sky-500 fi fi-sr-cat"></i>Pets</h5>
+                                                    <p class="mb-0"><strong>50 </strong>/ 100</p>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-sky-500" role="progressbar" style="width: 50%;"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="budget-info flex-grow-2 me-3">
+                                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                                    <h5 class="mb-1"><i class="bg-indigo-500 fi fi-rr-graduation-cap"></i>Education</h5>
+                                                    <p class="mb-0"><strong>45 </strong>/ 100</p>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-indigo-500" role="progressbar" style="width: 45%;"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="budget-info flex-grow-2 me-3">
+                                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                                    <h5 class="mb-1"><i class="bg-violet-500 fi fi-rr-shirt-long-sleeve"></i>Clothes
+                                                    </h5>
+                                                    <p class="mb-0"><strong>35 </strong>/ 100</p>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-violet-500" role="progressbar" style="width: 35%;"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Weekly Expenses</h4>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="chartjsWeeklyExpenses"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Saving Goals </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-3 col-sm-6">
+                                        <div class="circle-progress-content">
+                                            <div id="circle1"><span>41%</span></div>
+                                            <h6>Vacation</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-md-3 col-sm-6">
+                                        <div class="circle-progress-content">
+                                            <div id="circle2"><span>20%</span></div>
+                                            <h6>Phone</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-md-3 col-sm-6">
+                                        <div class="circle-progress-content">
+                                            <div id="circle3"><span>5%</span></div>
+                                            <h6>New Car</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-md-3 col-sm-6">
+                                        <div class="circle-progress-content">
+                                            <div id="circle4"><span>46%</span></div>
+                                            <h6>Laptop</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="copyright">
+                            <p>© Copyright
+                                <script>
+                                    var CurrentYear = new Date().getFullYear()
+                                    document.write(CurrentYear)
+                                </script>
+                                <a href="#">DebtWise</a> I All Rights Reserved
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="./vendor/circle-progress/circle-progress-init.js"></script>
+    <script src="./vendor/chartjs/chartjs.js"></script>
+    <script src="./js/plugins/chartjs-bar-income-vs-expense.js"></script>
+    <script src="./js/plugins/chartjs-bar-weekly-expense.js"></script>
+    <script src="./js/plugins/chartjs-profile-wallet.js"></script>
+    <script src="./js/plugins/chartjs-profile-wallet2.js"></script>
+    <script src="./js/plugins/chartjs-profile-wallet3.js"></script>
+    <script src="./js/plugins/chartjs-profile-wallet4.js"></script>
+
+    <script src="./vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="./js/plugins/perfect-scrollbar-init.js"></script>
+    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="./js/plugins/circle-progress-init.js"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+
+</html>

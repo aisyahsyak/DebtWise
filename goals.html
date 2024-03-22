@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DebtWise : Debt Management System</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./image/logob.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./vendor/toastr/toastr.min.css">
+</head>
+
+<body class="dashboard">
+    <div id="preloader" class="preloader-wrapper">
+        <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="header-content">
+                            <div class="header-left">
+                                <div class="brand-logo"><a class="mini-logo" href="dashboard.html"><img src="./images/logoi.png" alt="" width="40"></a></div>
+                                <!-- <div class="search">
+                                    <form action="#">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search Here">
+                                            <span class="input-group-text"><i class="fi fi-br-search"></i></span>
+                                        </div>
+                                    </form>
+                                </div> -->
+                            </div>
+                            <div class="header-right">
+                                <div class="dark-light-toggle" onclick="themeToggle()">
+                                    <span class="dark"><i class="fi fi-rr-eclipse-alt"></i></span>
+                                    <span class="light"><i class="fi fi-rr-eclipse-alt"></i></span>
+                                </div>
+                                <div class="nav-item dropdown notification">
+                                    <!-- <div data-bs-toggle="dropdown">
+                                        <div class="notify-bell icon-menu">
+                                            <span><i class="fi fi-rs-bells"></i></span>
+                                        </div>
+                                    </div>
+                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-end">
+                                        <h4>Recent Notification</h4>
+                                        <div class="lists">
+                                            <a class="" href="/#">
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-3 icon success"><i class="fi fi-bs-check"></i></span>
+                                                    <div>
+                                                        <p>Account created successfully</p>
+                                                        <span>2024-11-04 12:00:23</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="" href="/#">
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-3 icon fail"><i class="fi fi-sr-cross-small"></i></span>
+                                                    <div>
+                                                        <p>2FA verification failed</p>
+                                                        <span>2024-11-04 12:00:23</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="" href="/#">
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-3 icon success"><i class="fi fi-bs-check"></i></span>
+                                                    <div>
+                                                        <p>Device confirmation completed</p>
+                                                        <span>2024-11-04 12:00:23</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="" href="/#">
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-3 icon pending"><i class="fi fi-rr-triangle-warning"></i></span>
+                                                    <div>
+                                                        <p>Phone verification pending</p>
+                                                        <span>2024-11-04 12:00:23</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="more">
+                                            <a href="/notifications.html">More<i class="fi fi-bs-angle-right"></i></a>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="dropdown profile_log dropdown">
+                                    <div data-bs-toggle="dropdown">
+                                        <div class="user icon-menu active"><span><i class="fi fi-rr-user"></i></span></div>
+                                    </div>
+                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu dropdown-menu-end">
+                                        <div class="user-email">
+                                            <div class="user">
+                                                <span class="thumb"><i class="fi fi-rr-user"></i></span>
+                                                <div class="user-info">
+                                                    <h5>George Michael</h5>
+                                                    <span>george05@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="dropdown-item" href="/profile.html">
+                                            <span><i class="fi fi-rr-user"></i></span>
+                                            Profile
+                                        </a>
+                                        <!-- <a class="dropdown-item" href="/wallets.html">
+                                            <span><i class="fi fi-rr-wallet"></i></span>
+                                            Wallets
+                                        </a> -->
+                                        <!-- <a class="dropdown-item" href="/settings.html">
+                                            <span><i class="fi fi-rr-settings"></i></span>
+                                            Settings
+                                        </a> -->
+                                        <a class="dropdown-item logout" href="login.html">
+                                            <span><i class="fi-br-sign-out-alt"></i></span>
+                                            Logout
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="brand-logo"><a class="full-logo" href="dashboard.html"><img src="./image/logos.png" alt="" width="190"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <span>
+                                <i class="fi fi-rr-dashboard"></i>
+                            </span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="budgets.html">
+                            <span>
+                                <i class="fi fi-rr-donate"></i>
+                            </span>
+                            <span class="nav-text">Budgets</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="goals.html">
+                            <span>
+                                <i class="fi fi-sr-bullseye-arrow"></i>
+                            </span>
+                            <span class="nav-text">Goals</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="debt.html">
+                            <span>
+                                <i class="fi fi-sr-calculator"></i>
+                            </span>
+                            <span class="nav-text">Debt</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="education.html">
+                            <span>
+                                <i class="fi-br-graduation-cap"></i>
+                            </span>
+                            <span class="nav-text">Education</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <span>
+                                <i class="fi fi-rr-user"></i>
+                            </span>
+                            <span class="nav-text">Profile</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-xl-4">
+                                    <div class="page-title-content">
+                                        <h3>Goals</h3>
+                                        <p class="mb-2">Make your <strong>goals</strong> visible!</p>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="breadcrumbs"><a href="#">Home </a>
+                                        <span><i class="fi fi-rr-angle-small-right"></i></span>
+                                        <a href="#">Goals</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="goals-tab">
+                    <div class="row g-0">
+                        <div class="col-xl-3">
+                            <div class="nav d-block">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-6">
+                                        <div class="goals-nav active" data-bs-toggle="pill" data-bs-target="#a1">
+                                            <div class="goals-nav-circle">
+                                                <div id="circle5"></div>
+                                                <span>5%</span>
+                                            </div>
+                                            <div class="goals-nav-text">
+                                                <h3>Merc Benz C 200</h3>
+                                                <p><strong>RM14,844.40</strong> / RM296,888.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-md-6">
+                                        <div class="goals-nav" data-bs-toggle="pill" data-bs-target="#a2">
+                                            <div class="goals-nav-circle">
+                                                <div id="circle6"></div>
+                                                <span>41%</span>
+                                            </div>
+                                            <div class="goals-nav-text">
+                                                <h3>Japan Vacation</h3>
+                                                <p><strong>RM2,460.00</strong> / RM6,000.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-md-6">
+                                        <div class="goals-nav" data-bs-toggle="pill" data-bs-target="#a3">
+                                            <div class="goals-nav-circle">
+                                                <div id="circle7"></div>
+                                                <span>46%</span>
+                                            </div>
+                                            <div class="goals-nav-text">
+                                                <h3>Asus TUF Gaming Laptop</h3>
+                                                <p><strong>RM2,300.00</strong> / RM5,000.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-md-6">
+                                        <div class="goals-nav" data-bs-toggle="pill" data-bs-target="#a4">
+                                            <div class="goals-nav-circle">
+                                                <div id="circle8"></div>
+                                                <span>20%</span>
+                                            </div>
+                                            <div class="goals-nav-text">
+                                                <h3>iPhone 15</h3>
+                                                <p><strong>RM1,000.00</strong> / RM5,000.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-goals-link">
+                                <h5 class="mb-0">Add new goals</h5>
+                                <a href="add-goals.html">
+                                    <i class="fi fi-rr-square-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9">
+                            <div class="tab-content goals-tab-content">
+                                <div class="tab-pane show active" id="a1">
+                                    <div class="goals-tab-title">
+                                        <h3>Merc Benz C 200</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>
+                                                            <span>Saved</span>
+                                                            <h3>RM14,844.40</h3>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <span>Goals</span>
+                                                            <h3>RM296,888.00</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 5%;" role="progressbar">
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between mt-2">
+                                                        <span>5%</span>
+                                                        <span>100%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Last Month</p>
+                                                                <h3>RM2,166.70</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Expenses</p>
+                                                                <h3>RM1,798</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Taxes</p>
+                                                                <h3>RM26,199.20</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Debt</p>
+                                                                <h3>RM365,478</h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="a2">
+                                    <div class="goals-tab-title">
+                                        <h3>Japan Vacation</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>
+                                                            <span>Saved</span>
+                                                            <h3>RM2,460.00</h3>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <span>Goals</span>
+                                                            <h3>RM6,000.00</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 41%;" role="progressbar">
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between mt-2">
+                                                        <span>41%</span>
+                                                        <span>100%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Last Month</p>
+                                                                <h3>RM1,500</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Expenses</p>
+                                                                <h3>RM1,000</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Taxes</p>
+                                                                <h3>RM100</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Debt</p>
+                                                                <h3>RM0</h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="a3">
+                                    <div class="goals-tab-title">
+                                        <h3>Asus TUF Gaming Laptop</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>
+                                                            <span>Saved</span>
+                                                            <h3>RM2,300.00</h3>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <span>Goals</span>
+                                                            <h3>RM5,000.00</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 46%;" role="progressbar">
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between mt-2">
+                                                        <span>46%</span>
+                                                        <span>100%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Last Month</p>
+                                                                <h3>RM1,200</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Expenses</p>
+                                                                <h3>RM500</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Taxes</p>
+                                                                <h3>RM0</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Debt</p>
+                                                                <h3>RM0</h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="a4">
+                                    <div class="goals-tab-title">
+                                        <h3>iPhone 15</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>
+                                                            <span>Saved</span>
+                                                            <h3>RM1,000.00</h3>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <span>Goals</span>
+                                                            <h3>RM5,000.00</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 20%;" role="progressbar">
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between mt-2">
+                                                        <span>20%</span>
+                                                        <span>100%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Last Month</p>
+                                                                <h3>RM500</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Expenses</p>
+                                                                <h3>RM300</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Taxes</p>
+                                                                <h3>RM0</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                            <div class="goals-widget">
+                                                                <p>Debt</p>
+                                                                <h3>RM0</h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="copyright">
+                            <p>© Copyright
+                                <script>
+                                    var CurrentYear = new Date().getFullYear()
+                                    document.write(CurrentYear)
+                                </script>
+                                <a href="#">DebtWise</a> I All Rights Reserved
+                            </p>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/chartjs/chartjs.js"></script>
+    <!--  -->
+    <!--  -->
+    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="./js/plugins/circle-progress-init.js"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+
+</html>

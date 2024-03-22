@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DebtWise : Debt Management System</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./image/logob.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./vendor/toastr/toastr.min.css">
+</head>
+
+<body class="dashboard">
+    <div id="preloader" class="preloader-wrapper">
+        <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="header-content">
+                            <div class="header-left">
+                                <div class="brand-logo"><a class="mini-logo" href="dashboard.html"><img src="./images/logoi.png" alt="" width="40"></a></div>
+                            </div>
+                            <div class="header-right">
+                                <div class="dark-light-toggle" onclick="themeToggle()">
+                                    <span class="dark"><i class="fi fi-rr-eclipse-alt"></i></span>
+                                    <span class="light"><i class="fi fi-rr-eclipse-alt"></i></span>
+                                </div>
+                                <div class="dropdown profile_log dropdown">
+                                    <div data-bs-toggle="dropdown">
+                                        <div class="user icon-menu active"><span><i class="fi fi-rr-user"></i></span></div>
+                                    </div>
+                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu dropdown-menu-end">
+                                        <div class="user-email">
+                                            <div class="user">
+                                                <span class="thumb"><i class="fi fi-rr-user"></i></span>
+                                                <div class="user-info">
+                                                    <h5>George Michael</h5>
+                                                    <span>george05@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="dropdown-item" href="profile.html">
+                                            <span><i class="fi fi-rr-user"></i></span>
+                                            Profile
+                                        </a>
+                                        <a class="dropdown-item logout" href="login.html">
+                                            <span><i class="fi-br-sign-out-alt"></i></span>
+                                            Logout
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="brand-logo"><a class="full-logo" href="dashboard.html"><img src="./image/logos.png" alt="" width="190"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <span>
+                                <i class="fi fi-rr-dashboard"></i>
+                            </span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="budgets.html">
+                            <span>
+                                <i class="fi fi-rr-donate"></i>
+                            </span>
+                            <span class="nav-text">Budgets</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="goals.html">
+                            <span>
+                                <i class="fi fi-sr-bullseye-arrow"></i>
+                            </span>
+                            <span class="nav-text">Goals</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="debt.html">
+                            <span>
+                                <i class="fi fi-sr-calculator"></i>
+                            </span>
+                            <span class="nav-text">Debt</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="education.html">
+                            <span>
+                                <i class="fi-br-graduation-cap"></i>
+                            </span>
+                            <span class="nav-text">Education</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <span>
+                                <i class="fi fi-rr-user"></i>
+                            </span>
+                            <span class="nav-text">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-xl-4">
+                                    <div class="page-title-content">
+                                        <h3>Education</h3>
+                                        <p class="mb-2">Learn something new here</p>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="breadcrumbs"><a href="#">Home </a>
+                                        <span><i class="fi fi-rr-angle-small-right"></i></span>
+                                        <a href="#">Education</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="budgets-tab">
+                    <div class="row g-0">
+                    <div class="row g-0">
+                        <div class="col-xl-3">
+                            <div class="nav d-block">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-6">
+                                        <div class="budgets-nav active" data-bs-toggle="pill" data-bs-target="#a1">
+                                            <div class="budgets-nav-icon">
+                                                <span><i class="fi fi-rr-film"></i></span>
+                                            </div>
+                                            <div class="budgets-nav-text">
+                                                <h3>Video</h3>
+                                                <p></p>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                  
+                                 
+                                    <div class="col-xl-12 col-md-6">
+                                        <div class="budgets-nav" data-bs-toggle="pill" data-bs-target="#a2">
+                                            <div class="budgets-nav-icon">
+                                                <span><i class="fi fi-rr-money"></i></span>
+                                            </div>
+                                            <div class="budgets-nav-text">
+                                                <h3>Tips on Saving Money</h3>
+                                                
+                                            </div>
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="col-xl-9">
+                            <div class="tab-content budgets-tab-content">
+                                <div class="tab-pane show active" id="a1">
+                                    <div class="budgets-tab-title">
+                                        <h3>Ways to Budget</h3> 
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <video width="750" height="360" controls>
+                                                    <source src="waystobudget.mp4" type="video/mp4">
+                                                   </video>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="a2">
+                                    <div class="budgets-tab-title">
+                                        <h3>Here are the important tips<h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between">
+                                                     <ul>
+                                                     <li>- Learn to budget and understand your finances</li>
+                                                     <li>- Get out of debt</li>
+                                                     <li>- Create a designated savings account</li>
+                                                     <li>- Put a spending limit on your card</li>
+                                                     <li>- Cancel any unused subscriptions</li>
+                                                     </ul>
+
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                              
+                                      
+                                    </div>
+                                </div>
+                               
+                                     
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="copyright">
+                            <p>© Copyright
+                                <script>
+                                    var CurrentYear = new Date().getFullYear()
+                                    document.write(CurrentYear)
+                                </script>
+                                <a href="#">DebtWise</a> I All Rights Reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/chartjs/chartjs.js"></script>
+    <script src="./js/plugins/chartjs-bar-budget-period.js"></script>
+    <!--  -->
+    <!--  -->
+    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="./js/plugins/circle-progress-init.js"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+
+</html>
